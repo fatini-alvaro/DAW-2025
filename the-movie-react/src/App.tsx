@@ -3,6 +3,7 @@ import { Footer } from "./components/layout/footer"
 import { Header } from "./components/layout/header"
 import {Navbar} from "./components/layout/navbar"
 import {Highlight} from "./components/layout/highlight"
+import { MovieContextProvider } from "./cases/movies/context/movie-context"
 
 function App() {
 
@@ -10,9 +11,11 @@ function App() {
     <>
       <Header />
       <main>
-        <Navbar />
-        <Highlight /> 
-        <MovieContent />
+        <MovieContextProvider>
+          <Navbar />
+          <Highlight /> 
+          <MovieContent />
+        </MovieContextProvider>
       </main>  
       <Footer />
     </>

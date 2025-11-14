@@ -4,6 +4,10 @@ export type MovieDTO = {
   title: string;
   year: number;
   image: string;
+  genres: string;
+  duration: string;
+  sinopse: string;
+  highlight: string;
 }
 
 const _ENDPOINT = '/movies.json?key=517c4770';

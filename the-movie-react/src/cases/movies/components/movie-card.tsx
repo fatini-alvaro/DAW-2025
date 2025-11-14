@@ -1,3 +1,4 @@
+import { useMovies } from "../hooks/use-hook";
 import type { MovieDTO } from "../services/movie.service";
 
 type MovieCardProps = {
@@ -7,9 +8,17 @@ type MovieCardProps = {
 export function MovieCard({
   movie
 }: MovieCardProps) {
+
+  const { setSelectedMovie } = useMovies();
+
+  function handleSelect(movie: MovieDTO) {
+    setSelectedMovie(movie)
+  }
+
   return (
     <div className="bg-[#222] rounded-lg shadow-md overflow-hidden 
         cursor-pointer hover:shadow-xl hover:translate-y-1 transition"
+        onClick={() => handleSelect(movie)}
         >
       <img 
         className="w-full h-[300px] object-cover"
